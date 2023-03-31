@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <!-- CSS CUSTOM -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'search_note.js' %}"></script>
+    <!-- link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" -->
+    <!-- link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css" -->
+
+    <title>simplistic note keeper</title>
+</head>
+
+
+
+<body>
+    <header>simplistic note keeper</header>
+    <main>
+        {% block content %}
+        {% endblock  %}
+
+<!-- pagination -->
+{% block pagination %}
+{% if is_paginated %}
+    <div class="pagination">
+        <span class="page-links">
+            {% if page_obj.has_previous %}
+                <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+            <span class="page-current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+            {% if page_obj.has_next %}
+                <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
+{% endif %}
+{% endblock %}
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!-- entries/templates/entries/entry_list.html -->
+{% extends "base.html" %}
+{% block content %}  
+<a class="button_link" href="{% url 'create_note' %}">create new note</a>
+
+
+{% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">logout</a>
+    <a href="{% url 'password_change' %}">change password</a>
+{% else %}
+    <a href="{% url 'signup' %}">signup / </a>
+    <a href="{% url 'login' %}">login / </a>
+{% endif %}
+
+<!--input--> 
+<input id="searchbar" onkeyup="search_note()" type="text" name="search" placeholder="search in a page...">
+
+<p>current user: 
+    {% if user.is_authenticated %}
+        {{ user.username }}
+    {% else %}
+        visitor
+    {% endif %}
+</p>
+
+
+<div class="wrapper">
+{% for note in object_list %}
+    <div class="note">
+        <span class="bold">
+        <a href="{% url 'note_detail' note.pk %}">
+        {{ note.note_name }}
+        </a>
+        <br>
+        {{ note.date_created }} 
+        <br>
+        </span>
+        {{ note.note_text|truncatechars:50}}
+        <br>
+    </div>
+
+{% endfor %}
+</div>
+
+{% endblock %}
+

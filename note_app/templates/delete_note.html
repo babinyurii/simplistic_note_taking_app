@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% block content %}
+<form method="post">{% csrf_token %}
+    <p>
+    are you sure you want to entry_confirm_delete
+        <em>"{{ object.note_name }}"</em>
+        created on {{ object.date_created }}?
+     </p>
+     <div class="note_detail_buttons">
+        <input type="submit" value="confirm">
+        <a class="button_link" href="{% url 'note_detail' object.id %}">return to all notes</a>
+    </div>
+    </form>
+    
+ </a>
+{% endblock %}

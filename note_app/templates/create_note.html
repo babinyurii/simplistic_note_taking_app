@@ -1,0 +1,18 @@
+<!-- entries/templates/entries/entry_list.html -->
+{% extends "base.html" %}
+{% block content %}
+
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="note_detail_buttons">
+            <input type="submit" value="save">
+            <a class="button_link" href="{% url 'note_list' %}">cancel</a>
+        </div>   
+    </form>
+    
+
+
+
+{% endblock %}

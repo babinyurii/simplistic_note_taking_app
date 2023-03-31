@@ -1,0 +1,26 @@
+<!-- entries/templates/entries/entry_list.html -->
+{% extends "base.html" %}
+{% block content %}
+
+<div class="note_detail_container"> 
+    <span class="bold">
+    <p class="note_detail">{{ object.note_name }}</p>
+    <p class="note_detail">{{ object.date_created }}</p>
+    </span>
+    <p class="note_detail">{{ object.note_text }}</p>
+
+    
+
+</div>
+
+
+<div class="note_detail_buttons">
+    <a class="button_link" href="{% url 'note_list' %}">return to all notes</a>
+    <a class="button_link" href="{% url 'delete_note' object.id %}">delete this note</a>
+    <a class="button_link" href="{% url 'update_note' object.id %}">update this note</a>
+</div>
+
+
+
+
+{% endblock %}

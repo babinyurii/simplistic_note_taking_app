@@ -1,0 +1,15 @@
+<!-- entries/templates/entries/entry_list.html -->
+{% extends "base.html" %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="note_detail_buttons">
+            <input type="submit" value="save">
+            <a class="button_link" href="{% url 'note_list' %}">return to note list</a>
+            <a class="button_link" href="{% url 'note_detail' object.id %}">return to this note details</a>
+        </div>    
+    </form>
+    
+
+{% endblock  %}

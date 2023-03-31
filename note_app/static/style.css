@@ -1,0 +1,197 @@
+*{
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  font-size: xx-large;
+  padding: 1%;
+  background-color: rgb(255, 205, 113);
+  text-align: center;
+}
+
+
+.bold{
+  font-weight: bold;
+}
+
+.pagination {
+  font-size: larger;
+  padding: 1%;
+  background-color: rgb(205, 242, 255);
+  text-align: center;
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+p {
+ 
+  padding: 0.5%;
+  font-size: larger;
+  margin: 1em;
+}
+
+.note_detail{
+  width: 100%;
+  text-align: center;
+}
+
+.note_detail_container{
+  display: grid;
+  place-items: center;
+  border: dotted
+} 
+
+
+
+.note{
+  padding: 0.5%;
+  font-size: larger;
+  margin: 1em;
+  background-color: rgb(249, 219, 183);
+  text-align: center;
+  border-radius: 20px;
+}
+
+.note::marker{
+  content: none;
+}
+
+
+a {
+  padding: 0.5%;
+  font-size: larger;
+}
+
+label {
+  padding: 0.5%;
+  font-size: larger;
+}
+
+
+#searchbar {
+  width: 20em;
+  height: 2em;
+  padding: 1%;
+  font-size: 1em;
+  margin: 1em;
+}
+
+
+#id_note_name {
+  font-size: 1em;
+  width: 40em;
+  height: 1em;
+  size: 10;
+  padding:5px 15px; 
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+
+#id_note_text {
+  font-size: 1em;
+  width: 40em;
+  height: 10em;
+  size: 10;
+  padding:5px 15px; 
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* button styling*/
+
+.button_link {
+  flex: 1;
+  font-size: xx-large;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  line-height: 3;
+  color: black;
+}
+
+
+
+.button_link:link,
+.button_link:visited,
+.button_link:focus {
+  background: palegoldenrod;
+  color: black;
+}
+
+
+.button_link:hover {
+  background: orange;
+}
+
+
+.button_link:active {
+  background: darkred;
+  color: white;
+}
+
+
+.note_detail_buttons {
+  display: flex;
+  gap: 0.625%;
+}
+
+input[type=submit] {
+  flex: 1;
+  font-size: xx-large;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  line-height: 3;
+  color: black;
+  background-color: palegoldenrod;;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background: orange;
+}
+
+
+input[type=submit]:active {
+  background: darkred;
+  color: white;
+}
+
+input[type=submit]:link,
+input[type=submit]:visited,
+input[type=submit]:focus {
+  background: palegoldenrod;
+  color: black;
+}
+
+
+
+/*
+
+input[type=submit] {
+  font-size: 2em;
+  width: 5em;
+  height: 2em;
+  size: 10;
+  padding:5px 15px; 
+  background:#86e5ff; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+
+.note_detail_buttons{
+  display: grid;
+  place-items: center;
+}
