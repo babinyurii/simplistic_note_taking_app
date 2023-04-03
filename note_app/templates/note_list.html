@@ -24,24 +24,25 @@
     {% endif %}
 </p>
 
-
-<div class="wrapper">
-{% for note in object_list %}
-    <div class="note">
-        <span class="bold">
-        <a href="{% url 'note_detail' note.pk %}">
-        {{ note.note_name }}
-        </a>
-        <br>
-        {{ note.date_created }} 
-        <br>
-        </span>
-        {{ note.note_text|truncatechars:50}}
-        <br>
+{% if user.is_authenticated  %}
+    <div class="wrapper">
+    {% for note in object_list %}
+        <div class="note">
+            <span class="bold">
+            <a href="{% url 'note_detail' note.pk %}">
+            {{ note.note_name }}
+            </a>
+            <br>
+            {{ note.date_created }} 
+            <br>
+            </span>
+            {{ note.note_text|truncatechars:50}}
+            <br>
+        </div>
+    {% endfor %}
     </div>
 
-{% endfor %}
-</div>
+{% endif %}
 
 {% endblock %}
 
