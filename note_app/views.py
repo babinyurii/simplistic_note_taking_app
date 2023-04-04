@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from .models import NoteModel
+from .forms import NoteCreateForm, NoteUpdateForm
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
-
 from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
@@ -22,11 +22,10 @@ class NoteListView(ListView):
 
 class NoteCreateView(CreateView):
     model = NoteModel
-    fields = ["note_name", "note_text"]
+    #fields = ["note_name", "note_text"] # <<< don't specify fields, if using form: fields are in the corresponding form
     template_name = "create_note.html"
+    form_class = NoteCreateForm
     #success_url = reverse_lazy("note_list")
-    #def get_success_url(self):
-    #    return reverse_lazy("note_list")
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -53,8 +52,9 @@ class NoteDeleteView(DeleteView):
 
 class NoteUpdateView(UpdateView):
     model = NoteModel
-    fields = ["note_name", "note_text"]
+    #fields = ["note_name", "note_text"]
     template_name = "update_note.html"
+    form_class = NoteUpdateForm
     
     def get_success_url(self):
         return reverse_lazy("note_detail", 
