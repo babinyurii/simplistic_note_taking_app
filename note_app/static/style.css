@@ -93,6 +93,10 @@ label {
   border-radius: 5px;
 }
 
+#note_text{
+  text-align: center;
+  width: 50%;
+}
 
 #id_note_text {
   font-size: 1em;
