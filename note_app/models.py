@@ -13,3 +13,9 @@ class NoteModel(models.Model):
     
     #urgency = models.Choices()
 
+    def __str__(self):
+        return self.note_name
+    
+
+    
+
